@@ -1,0 +1,5 @@
+app:
+    name: App
+    environment: DEV
+    debug: true
+    url: http://app.local

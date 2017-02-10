@@ -1,0 +1,10 @@
+user-service:
+    index-controller:
+        path: "/"
+        method: "GET"
+        controller: "App\\Controllers\\IndexController@indexAction"
+
+    hello-controller:
+        path: "/{name}"
+        method: "GET"
+        controller: "App\\Controllers\\IndexController@helloAction"

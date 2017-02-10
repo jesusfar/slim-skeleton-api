@@ -1,0 +1,9 @@
+database:
+    master:
+        driver: pdo_mysql
+        host: mysql.docker
+        port: 3306
+        dbname: mydb
+        user: root
+        password: toor
+        charset: UTF8
