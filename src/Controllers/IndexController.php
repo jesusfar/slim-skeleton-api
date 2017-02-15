@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Slim\App;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Pimple\Container;
 
 /**
  * IndexController
@@ -18,6 +19,12 @@ use Psr\Http\Message\ResponseInterface as Response;
  */
 class IndexController extends Controller
 {
+    private $container;
+
+    public function __construct(Container $container)
+    {
+        $this->container = $container; 
+    }
 
     /**
      * IndexAction
@@ -29,6 +36,7 @@ class IndexController extends Controller
      */
     public function indexAction(Request $request, Response $response)
     {
+        $this->container->get('loggers')['app']->info('Welcome!!');
         return $response->withJson(['payload' => 'Welcome to Upmarlin API!']);
     }
 }

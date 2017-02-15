@@ -28,7 +28,7 @@ class ControllerServiceProvider implements ServiceProviderInterface
      *
      * @return void
      */
-    public function boot(App $app)
+    public function boot(Container $container)
     {
 
     }
@@ -40,12 +40,12 @@ class ControllerServiceProvider implements ServiceProviderInterface
      *
      * @return void
      */
-    public function register(Container $app)
+    public function register(Container $container)
     {
-        $this->loadRoutes($app);
+        $this->loadRoutes($container);
     }
 
-    private function loadRoutes(Container $app)
+    private function loadRoutes(Container $container)
     {
 
         $services = $this->parseRouteFile();
@@ -60,10 +60,10 @@ class ControllerServiceProvider implements ServiceProviderInterface
                 $classController = $controller[0];
                 $actionController = $controller[1];
 
-                if (!array_key_exists($classController, $app)) {
+                if (!array_key_exists($classController, $container)) {
                     if (class_exists($classController)) {
-                        $app[$containerKey] = function($app) use ($classController) {
-                            return new $classController();
+                        $container[$containerKey] = function($container) use ($classController) {
+                            return new $classController($container);
                         };
                         $controllers[$containerKey] = [
                             'path'  => $path,
@@ -75,7 +75,7 @@ class ControllerServiceProvider implements ServiceProviderInterface
             }
         }
 
-        $app['controllers'] = $controllers;
+        $container['controllers'] = $controllers;
     }
 
     private function parseRouteFile()
