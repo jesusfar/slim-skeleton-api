@@ -23,6 +23,9 @@ $app = new \Slim\App($container);
 // Register and load ConfigServiceProvider
 $container->register(new App\Providers\ConfigServiceProvider('settings'));
 
+// Register Loggers
+$container->register(new App\Providers\LoggerServiceProvider());
+
 // Register and load Controller based on routes
 $container->register(new App\Providers\ControllerServiceProvider());
 
