@@ -1,0 +1,7 @@
+httpVersion: '1.1'
+responseChunkSize: 4096
+outputBuffering: 'append'
+determineRouteBeforeAppMiddleware: false
+displayErrorDetails: true
+addContentLengthHeader: true
+routerCacheFile: '/app/app/bootstrap/cache/routes.cache'
