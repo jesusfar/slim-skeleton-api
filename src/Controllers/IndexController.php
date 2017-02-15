@@ -31,21 +31,4 @@ class IndexController extends Controller
     {
         return $response->withJson(['payload' => 'Welcome to Upmarlin API!']);
     }
-
-    /**
-     * helloAction
-     *
-     * Example action controller
-     *
-     * @param Request     $request Request object inyected
-     * @param Application $ap      App object inyected
-     *
-     * @return JsonResponse
-     */
-    public function helloAction(Request $request, Response $response) 
-    {
-        $name = $request->attributes->get('name');
-
-        return new JsonResponse(['payload' => $name]);
-    }
 }
