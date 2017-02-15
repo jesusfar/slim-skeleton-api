@@ -9,7 +9,7 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 /**
- * RouteServiceProvider
+ * LoggerServiceProvider
  *
  * @category  Providers
  * @package   Providers
