@@ -44,7 +44,7 @@ class ConfigServiceProvider implements ServiceProviderInterface
      *
      * @return void
      */
-    public function boot(App $app)
+    public function boot(Container $container)
     {
 
     }
@@ -56,12 +56,12 @@ class ConfigServiceProvider implements ServiceProviderInterface
      *
      * @return void
      */
-    public function register(Container $app)
+    public function register(Container $container)
     {
-        $this->loadConfig($app);
+        $this->loadConfig($container);
     }
 
-    private function loadConfig(Container $app)
+    private function loadConfig(Container $container)
     {
 
         $configLoaded = [];
@@ -75,7 +75,7 @@ class ConfigServiceProvider implements ServiceProviderInterface
                 $configLoaded[$key] = $value;
             }
         }
-        $app[$this->prefix] = function ($app) use ($configLoaded) {
+        $container[$this->prefix] = function ($container) use ($configLoaded) {
             return $configLoaded;
         };
     }

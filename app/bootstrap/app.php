@@ -21,7 +21,7 @@ $container = new \Slim\Container();
 $app = new \Slim\App($container);
 
 // Register and load ConfigServiceProvider
-$container->register(new App\Providers\ConfigServiceProvider('config'));
+$container->register(new App\Providers\ConfigServiceProvider('settings'));
 
 // Register and load Controller based on routes
 $container->register(new App\Providers\ControllerServiceProvider());
