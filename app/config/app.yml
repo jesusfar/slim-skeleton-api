@@ -3,3 +3,7 @@ app:
     environment: DEV
     debug: true
     url: http://app.local
+loggers:
+    app:
+        level: 'debug'
+        path: /app/storage/logs/app.log
