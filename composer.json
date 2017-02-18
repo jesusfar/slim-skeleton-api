@@ -31,8 +31,8 @@
             "echo 'Started web server on http://0.0.0.0:8080'",
             "php -S 0.0.0.0:8080 -t web"
         ],
-        "migrations:status": "./vendor/bin/doctrine-migrations migration:status --configuration database/migrations/config/migrations.yml --db-configuration database/migrations/config/migrations-db.php",
-        "migrations:migrate": "./vendor/bin/doctrine-migrations migration:migrate --configuration database/migrations/config/migrations.yml --db-configuration database/migrations/config/migrations-db.php",
-        "migrations:generate": "./vendor/bin/doctrine-migrations migration:generate --configuration database/migrations/config/migrations.yml --db-configuration database/migrations/config/migrations-db.php"
+        "migrations:status": "su nobody -s /bin/sh -c './vendor/bin/doctrine-migrations migration:status --configuration database/migrations/config/migrations.yml --db-configuration database/migrations/config/migrations-db.php'",
+        "migrations:migrate": "su nobody -s /bin/sh -c './vendor/bin/doctrine-migrations migration:migrate --configuration database/migrations/config/migrations.yml --db-configuration database/migrations/config/migrations-db.php'",
+        "migrations:generate": "su nobody -s /bin/sh -c './vendor/bin/doctrine-migrations migration:generate --configuration database/migrations/config/migrations.yml --db-configuration database/migrations/config/migrations-db.php'"
     }
 }

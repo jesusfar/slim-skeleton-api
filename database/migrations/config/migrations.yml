@@ -1,4 +1,4 @@
 name: Doctrine Migrations for UpMarlin API
-migrations_namespace: NidarBox/UpMarlin/DoctrineMigrations
+migrations_namespace: NidarBox\UpMarlin\DoctrineMigrations
 table_name: migration_versions
 migrations_directory: /app/database/migrations
