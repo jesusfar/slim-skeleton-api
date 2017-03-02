@@ -4,4 +4,4 @@ outputBuffering: 'append'
 determineRouteBeforeAppMiddleware: false
 displayErrorDetails: true
 addContentLengthHeader: true
-routerCacheFile: '/app/app/bootstrap/cache/routes.cache'
+routerCacheFile: '/opt/upmarlin-api/app/bootstrap/cache/routes.cache'
