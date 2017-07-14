@@ -37,6 +37,7 @@ class IndexController extends Controller
     public function indexAction(Request $request, Response $response)
     {
         $this->container->get('loggers')['app']->info('Welcome!!');
-        return $response->withJson(['payload' => 'Welcome to Upmarlin API!']);
+
+        return $response->withJson(['data' => 'Welcome!']);
     }
 }

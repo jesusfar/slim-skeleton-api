@@ -6,4 +6,4 @@ app:
 loggers:
     app:
         level: 'debug'
-        path: /opt/upmarlin-api/storage/logs/app.log
+        path: /application/storage/logs/app.log
